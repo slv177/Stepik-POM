@@ -11,10 +11,11 @@ def browser(request):
     options = Options()
     user_language = request.config.getoption("language")
     options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
+    # options.headless = True
     browser = webdriver.Chrome(options=options)
     print(user_language)
-    print("\nstart browser for test..")
+    print("\nstart browser for test (conftest file)..")
     yield browser
-    print("\nquit browser (10)..")
-    time.sleep(12)
+    print("\nquit browser (conftest file)..")
+    # time.sleep(60)
     browser.quit()
