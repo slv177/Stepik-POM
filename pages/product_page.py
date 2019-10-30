@@ -25,7 +25,6 @@ class ProductPage(BasePage):
 
     def get_product_price_message(self):
         time.sleep(0.5)
-        # return self.browser.find_element(*ProductPageLocatiors.PRICE_MESSAGE).text
         elementPPM = self.browser.find_element(*ProductPageLocatiors.PRICE_MESSAGE)
         try:
             elementPPM.is_displayed()
@@ -35,7 +34,6 @@ class ProductPage(BasePage):
 
     def get_product_price_header(self):
         time.sleep(0.5)
-        # return self.browser.find_element(*ProductPageLocatiors.PRICE_HEADER).text
         elementPPH = self.browser.find_element(*ProductPageLocatiors.PRICE_HEADER)
         try:
             elementPPH.is_displayed()
@@ -49,16 +47,10 @@ class ProductPage(BasePage):
         btn_add_to_basket.click()
 
     def should_be_correct_name(self, product_name_header, product_name_message):
-        print("PNM = ", product_name_message)
-        print("PNH = ", product_name_header)
         assert product_name_message == product_name_header, "Product names are  not equal"
-        print("Product names are equal")
 
     def should_be_correct_price(self, product_price_header, product_price_message):
-        print("PPM = ", product_price_message)
-        print("PPH = ", product_price_header)
         assert product_price_message == product_price_header, "Product prices are  not equal"
-        print("Product prices are equal")
 
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocatiors.SUCCESS_MESSAGE), \
