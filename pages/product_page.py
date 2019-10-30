@@ -3,41 +3,42 @@ from .locators import ProductPageLocatiors
 
 import time
 
+
 class ProductPage(BasePage):
 
     def get_product_name_message(self):
         time.sleep(0.5)
-        elementPNM = self.browser.find_element(*ProductPageLocatiors.PRODUCT_NAME_IN_MESSAGE)
+        product_name_message = self.browser.find_element(*ProductPageLocatiors.PRODUCT_NAME_IN_MESSAGE)
         try:
-            elementPNM.is_displayed()
-            return elementPNM.text
+            product_name_message.is_displayed()
+            return product_name_message.text
         except:
             print("PNM is empty")
 
     def get_product_name_header(self):
         time.sleep(0.5)
-        elementPNH = self.browser.find_element(*ProductPageLocatiors.PRODUCT_NAME_IN_PRODUCT_HEADER)
+        product_name_header = self.browser.find_element(*ProductPageLocatiors.PRODUCT_NAME_IN_PRODUCT_HEADER)
         try:
-            elementPNH.is_displayed()
-            return elementPNH.text
+            product_name_header.is_displayed()
+            return product_name_header.text
         except:
             print("PNH is empty")
 
     def get_product_price_message(self):
         time.sleep(0.5)
-        elementPPM = self.browser.find_element(*ProductPageLocatiors.PRICE_MESSAGE)
+        product_price_message = self.browser.find_element(*ProductPageLocatiors.PRICE_MESSAGE)
         try:
-            elementPPM.is_displayed()
-            return elementPPM.text
+            product_price_message.is_displayed()
+            return product_price_message.text
         except:
             print("elementPPM is empty")
 
     def get_product_price_header(self):
         time.sleep(0.5)
-        elementPPH = self.browser.find_element(*ProductPageLocatiors.PRICE_HEADER)
+        product_price_header = self.browser.find_element(*ProductPageLocatiors.PRICE_HEADER)
         try:
-            elementPPH.is_displayed()
-            return elementPPH.text
+            product_price_header.is_displayed()
+            return product_price_header.text
         except:
             print("elementPPH is empty")
 
